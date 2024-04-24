@@ -37,7 +37,7 @@ Requirement of Project
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/viitoradmin/python-fastapi-boilerplate/tree/feature/fastapi
+   git clone https://github.com/vijaysnp/weather_data_handling_system
    ```
 2. Upgrade pip version
     ```sh
@@ -128,7 +128,3 @@ Run the server
 Browse Swagger API Doc at: http://localhost:8000/docs
 
 Browse  Redoc at: http://localhost:8000/redoc
-
-<!-- Browse Swagger API Doc for version v1 at: http://localhost:8000/v1/docs
-
-Browse Swagger API Doc for version v2 at: http://localhost:8000/v2/docs -->
