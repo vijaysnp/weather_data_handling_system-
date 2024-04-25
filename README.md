@@ -1,12 +1,12 @@
 ## About The Project
 
-FastAPI boilerplate provides a simple basic structure for project creation with mysql database.
-
+Historic Weather data handling system 
 
 ### Built With
 
-* [![Python][Python]][Python-url]
-* [![FastAPI][FastAPI]][FastAPI-url]
+* Python 3.11
+* FatAPI
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -98,7 +98,7 @@ Requirement of Project
 
 3. update the Migrations>>env.py file o auto migrate the database.
     ```
-    from models import Base 
+    from config.database import Base 
     target_database = Base.metadata
     ```
 

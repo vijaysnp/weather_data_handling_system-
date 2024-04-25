@@ -2,27 +2,25 @@ from config import cors
 from fastapi import FastAPI
 from config import database
 from app.constant import constant
-# from fastapi_versioning import VersionedFastAPI
-# from app.api.auth.view import router_v1, router_v2
-# from app.api.auth.models import Base as authbase
+from app.api.auth.view import authrouter
+from app.api.weather.view import weatherrouter
+from app.api.auth.models.model import Base as authbase
 
 # Bind with the database, whenever new models find it's create it.
-# authbase.metadata.create_all(bind=database.engine)
+authbase.metadata.create_all(bind=database.engine)
 
 # Create app object and add routes
 app = FastAPI(title="weather data monitoring", middleware=cors.middleware)
 
 # define router for different version
 # router for version 1
-# app.include_router(
-#     router_v1, 
-#     prefix=constant.API_V1, tags=["/v1"]
-#     )
-# # router for version 2
-# app.include_router(
-#     router_v2, 
-#     prefix=constant.API_V2, tags=["/v2"]
-#     )
+app.include_router(
+    authrouter, 
+    prefix=f'{constant.API_V1}/auth',
+                   tags=['Authentication'])
 
-# # Define version to specify version related API's.
-# app = VersionedFastAPI(app, version_format="{major}", prefix_format="/v{major}")
+app.include_router(
+    weatherrouter, 
+    prefix=f'{constant.API_V1}',
+                   tags=['weather API'])
+

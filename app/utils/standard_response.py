@@ -10,7 +10,7 @@ class StandardResponse:
         message (str): The message from the API
     """
 
-    def __init__(self, status, status_code: int, data: dict, message: str) -> None:
+    def __init__(self, status_code: int, data: dict, message: str) -> None:
         """This function defines arguments that are used in the class
 
         Arguments:
@@ -22,7 +22,7 @@ class StandardResponse:
         Returns:
             Returns the API standard response
         """
-        self.status = status
+        
         self.status_code = status_code
         self.data = data
         self.message = message
