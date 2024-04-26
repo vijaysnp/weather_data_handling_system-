@@ -1,6 +1,6 @@
 import os
 import uvicorn
-from app._init_ import app
+from app.__init__ import app
 from config import env_config
 from app.constant import constant
 

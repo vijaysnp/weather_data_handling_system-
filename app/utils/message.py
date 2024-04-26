@@ -2,6 +2,7 @@ class InfoMessage:
     userCreated = "User created successfully"
     retriveInfoSuccessfully = "Retrive user info successfully"
     loggedInSuccessfully = "Logged in successfully"
+    weatherdatafetched = "Weather data fetched successfully"
 
 class ErrorMessage:
     emailRequired = "Email is required"

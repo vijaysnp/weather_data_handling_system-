@@ -1,11 +1,11 @@
 ## About The Project
 
-Historic Weather data handling system 
+Historic weather data handling system 
 
 ### Built With
 
 * Python 3.11
-* FatAPI
+* FastAPI
 
 
 <!-- GETTING STARTED -->
@@ -123,8 +123,16 @@ Add environment variables (given in .env) by running following command in cmd/te
 
 Run the server
    ```
-   python asgi.py
+   python main.py
    ```
 Browse Swagger API Doc at: http://localhost:8000/docs
 
 Browse  Redoc at: http://localhost:8000/redoc
+
+## Framework selection reasons
+
+   1. FastAPI's Performance: FastAPI is known for its high performance. It leverages Python type hints to automatically generate API documentation, which reduces the amount of code you need to write while ensuring type safety. Additionally, it is built on top of Starlette and Pydantic, which are highly performant asynchronous libraries. This makes FastAPI suitable for handling authentication requests efficiently, especially in high-traffic applications.
+
+   2. Asynchronous Support: FastAPI fully supports asynchronous programming, allowing you to handle multiple concurrent requests efficiently. Asynchronous programming is particularly useful for authentication APIs where you may need to perform tasks such as database queries or external API calls without blocking the event loop.
+
+   3. Easy Integration with Pydantic: FastAPI integrates seamlessly with Pydantic, a powerful data validation library. Pydantic allows you to define data models with type annotations and validation rules, making it easy to validate and serialize incoming request data, including user credentials during the authentication process.

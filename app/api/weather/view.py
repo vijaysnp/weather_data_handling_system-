@@ -23,7 +23,8 @@ class Weatherdata():
         try:
             Authorize.jwt_required()
         except Exception as e:
-            return StandardResponse(status.HTTP_403_FORBIDDEN, constant.STATUS_NULL, ErrorMessage.invalidToken).make
+            return StandardResponse(status.HTTP_403_FORBIDDEN, constant.STATUS_NULL, \
+                     ErrorMessage.invalidToken).make
         current_user = Authorize.get_jwt_subject()
         response = weather_data_service.WeatherDataService(
         ).get_historic_weather_data(db, body)
