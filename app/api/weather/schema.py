@@ -17,7 +17,13 @@ class HistoricWeatherRequest(BaseModel):
         }
     })
     
-    # @field_validator('latitude')
-    # @classmethod
-    # def name_must_be_required(cls, v):
-    #     return validation.ValidationMethods().check_number_validator(v, 'latitude')
+    @field_validator('latitude')
+    @classmethod
+    def name_must_be_required(cls, v):
+        return validation.ValidationMethods().check_float_validator(v, 'latitude')
+
+    @field_validator('longitude')
+    @classmethod
+    def name_must_be_required(cls, v):
+        return validation.ValidationMethods().check_float_validator(v, 'longitude')
+

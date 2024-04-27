@@ -2,6 +2,16 @@
 
 Historic weather data handling system 
 
+## Features of the Project
+
+1. Authentication of user information
+
+2. weather data handling for 
+
+   - Hourly temperature
+   - Precipitation
+   - Cloud covered 
+
 ### Built With
 
 * Python 3.11

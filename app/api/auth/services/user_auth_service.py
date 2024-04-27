@@ -69,7 +69,7 @@ class UserAuthService:
                     }
                     return StandardResponse(status.HTTP_200_OK, data, InfoMessage.loggedInSuccessfully).make
                 else:
-                    return StandardResponse(status.HTTP_400_BAD_REQUEST, constant.STATUS_NULL, ErrorMessage.invalidEmailOrPassword).make
+                    return StandardResponse(status.HTTP_400_BAD_REQUEST, constant.STATUS_NULL, ErrorMessage.invalidPassword).make
             else:
                 return StandardResponse(status.HTTP_400_BAD_REQUEST, constant.STATUS_NULL, ErrorMessage.userNotFound).make
         except Exception as e:

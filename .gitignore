@@ -1,3 +1,18 @@
+# Environments
 .env
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-.cache.sqlite
+*.py[cod]
+*$py.class
+*.cache.sqlite
+
+
+# Project level files
+0.0.2
+alembic.ini
+changes_note.txt
+migrations/
+.dbdata/
+app.dp
+*.conf
