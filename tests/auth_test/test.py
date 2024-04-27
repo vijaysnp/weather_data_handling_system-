@@ -1,7 +1,7 @@
 import json
-from fastapi.testclient import TestClient
 from app.__init__ import app
 from config import database
+from fastapi.testclient import TestClient
 
 client = TestClient(app)
 getdb = database.get_db
