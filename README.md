@@ -4,7 +4,7 @@ Historic weather data handling system
 
 ## Features of the Project
 
-1. Authentication of user information
+1. user authentication system
 
 2. weather data handling for 
 

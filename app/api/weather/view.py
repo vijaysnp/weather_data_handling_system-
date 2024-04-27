@@ -1,7 +1,6 @@
 from fastapi import Depends, APIRouter, status
 from app.constant import constant
 from config import database
-from app.api.weather import schema
 from sqlalchemy.orm import Session
 from fastapi_jwt_auth import AuthJWT
 from app.utils.message import InfoMessage, ErrorMessage
@@ -17,7 +16,7 @@ getdb = database.get_db
 class Weatherdata():
 
     @weatherrouter.get("/historic-weather/data")
-    async def get_historic_weather_data(body: schema.HistoricWeatherRequest, 
+    async def get_historic_weather_data(latitude: float, longitude: float, days: int, 
                                     db: Session = Depends(getdb),
                                     Authorize: AuthJWT = Depends()):
         try:
@@ -27,7 +26,7 @@ class Weatherdata():
                      ErrorMessage.invalidToken).make
         current_user = Authorize.get_jwt_subject()
         response = weather_data_service.WeatherDataService(
-        ).get_historic_weather_data(db, body)
+        ).get_historic_weather_data(db, latitude, longitude, days)
         return response
 
     

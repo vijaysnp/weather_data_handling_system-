@@ -16,7 +16,7 @@ from app.utils.standard_response import StandardResponse
 
 class WeatherDataService:
 
-    def get_historic_weather_data(self, db: Session, body: dict):
+    def get_historic_weather_data(self, db: Session, latitude: float, longitude: float, days: int):
         """
         Retrieves historic weather data for a given location and time period.ss
 
@@ -31,11 +31,6 @@ class WeatherDataService:
             Exception: If there is an error retrieving the weather data.
         """
         try:
-            data = body.dict()
-            latitude = data.get('latitude')
-            longitude = data.get('longitude')
-            days = data.get('days', 1)
-
             # Setup the Open-Meteo API client with cache and retry on error
             cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
             retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
